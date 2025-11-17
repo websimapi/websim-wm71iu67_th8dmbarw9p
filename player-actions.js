@@ -241,7 +241,7 @@ export function setChopTarget(player, gameMap, treeCoords) {
     }
 }
 
-function updateFollow(player, gameMap, allPlayers) {
+function updateFollow(player, gameMap, allPlayers, deltaTime) {
     const targetPlayer = allPlayers.get(player.followTargetId);
 
     if (!targetPlayer || !targetPlayer.isPowered()) {
@@ -362,7 +362,7 @@ export function updateAction(player, deltaTime, gameMap, allPlayers) {
             break;
         
         case PLAYER_STATE.FOLLOWING:
-             updateFollow(player, gameMap, allPlayers);
+             updateFollow(player, gameMap, allPlayers, deltaTime);
              break;
 
         case PLAYER_STATE.CHOPPING:
