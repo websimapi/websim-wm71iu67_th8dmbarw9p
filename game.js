@@ -174,7 +174,7 @@ export class Game {
             }
         } else if (command === 'follow') {
             let targetPlayer = null;
-            if (args.targetUsername) {
+            if (args && args.targetUsername) {
                 const targetUsernameLower = args.targetUsername.toLowerCase();
                 // Find any player, even offline, to store their ID. The follow logic will handle if they are powered or not.
                 targetPlayer = Array.from(this.players.values()).find(p => p.username.toLowerCase() === targetUsernameLower);

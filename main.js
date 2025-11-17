@@ -135,8 +135,8 @@ function startGame(channel, worldName) {
         (chatter) => { // onChatter for energy
             game.addOrUpdatePlayer(chatter);
         },
-        (userId, command) => { // onCommand
-            game.handlePlayerCommand(userId, command);
+        (userId, command, args) => { // onCommand
+            game.handlePlayerCommand(userId, command, args);
         }
     );
 
